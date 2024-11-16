@@ -1,4 +1,4 @@
-program bingo;
+program bingos;
 
 type
     carton = array[1..5,1..5] of Integer;
@@ -9,3 +9,8 @@ jugador: String;
   verificadores : array of cartonCheck;
 end;
 jugadores = array of Jugador;
+var
+bingo: jugadores;
+begin
+  
+end;
