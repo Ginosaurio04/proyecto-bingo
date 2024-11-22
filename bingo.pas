@@ -64,7 +64,7 @@ Begin
       writeln;
     End;
 End;
-procedure Leercantodad(Var cantidad:integral; mensaje: string);
+procedure Leercantidad(Var cantidad:integer; mensaje: string);
 var
 valido: boolean;
 begin
