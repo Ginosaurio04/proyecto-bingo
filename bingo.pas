@@ -77,7 +77,18 @@ Begin
       writeln;
     End;
 End;
-
+procedure Leercantidad(Var cantidad:integer; mensaje: string);
+var
+valido: boolean;
+begin
+   repeat
+      writeln(mensaje);
+      readln(cantidad);
+      valido:= (cantidad > 0);
+      if not valido then 
+         writeln('Por favor, ingrese un número entero positivo');
+   until
+end;
 Procedure InicializarJuego;
 
 Var 
