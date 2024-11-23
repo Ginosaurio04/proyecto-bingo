@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-program bingo;
-type
-    carton = array[1..5,1..5] of Integer;
-  cartonbool:array[1..5,1..5] to boolean;
-cartones: array of cartón;
-jugadores: array of cartones 
-var
-bingo: jugadores
-begin
-  
-end;
-=======
 Program JuegoDeBingo;
 
 Uses crt, sysutils;
@@ -30,7 +17,6 @@ Var
   Bolas: array[1..MAX_BOLAS] Of boolean;
   SecuenciaBolas: array[1..MAX_BOLAS] Of integer;
   Jugadores, CartonesPorJugador, TotalCartones, BolaActual: integer;
-
 Procedure GenerarCarton(jugador, carton: integer);
 
 Var 
@@ -62,7 +48,9 @@ Var
   i, j: integer;
 Begin
   writeln('Carton del Jugador ', jugador, ', Carton numero ', carton, ':');
-  writeln(' B   I   N   G   O');
+  writeln('_____________________');
+  writeln('| B | I | N | G | O |');
+  writeln('|___|___|___|___|___|');
   For i := 1 To FILAS Do
     Begin
       For j := 1 To COLUMNAS Do
@@ -74,21 +62,22 @@ Begin
           Else
             Write(Cartones[jugador, carton, i, j]:3, ' ');
         End;
-      writeln;
+      writeln('|');
+      writeln('|___|___|___|___|___|');
     End;
 End;
-procedure Leercantidad(Var cantidad:integer; mensaje: string);
-var
-valido: boolean;
-begin
-   repeat
-      writeln(mensaje);
-      readln(cantidad);
-      valido:= (cantidad > 0);
-      if not valido then 
-         writeln('Por favor, ingrese un número entero positivo');
-   until
-end;
+Procedure LeerCantidad(var cantidad: integer; mensaje: string);
+Var 
+  valido: Boolean;
+Begin
+  repeat
+    writeln(mensaje);
+    readln(cantidad);
+    valido := (cantidad > 0); 
+    If not valido Then
+      writeln('Por favor, ingrese un número entero positivo.');
+  until valido;
+End;
 Procedure InicializarJuego;
 
 Var 
@@ -271,10 +260,8 @@ Begin
 
   writeln('¡Juego terminado! El Ganador es el Jugador ', ganadorJugador,' con el carton numero', ganadorCarton);
 End;
-
 Begin
   clrscr;
   InicializarJuego;
   Jugar;
-End.
->>>>>>> 11dd98eea71b1cbe35f24b17e1d821bfdada1e9b
+End. 
